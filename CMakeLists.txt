@@ -1,4 +1,5 @@
 
+
 cmake_minimum_required( VERSION 3.13 )
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
@@ -15,6 +16,10 @@ find_package( Eigen3 REQUIRED )
 include_directories( ${EIGEN3_INCLUDE_DIR} )
 
 find_package( PoseLib REQUIRED )
+
+# Change this to your OpenMVG installation path:
+set(ENV{OpenMVG_DIR} "$ENV{HOME}/ventura-research/openMVG_Build/openMVG_install")
+find_package( OpenMVG REQUIRED )
 
 include_directories(${CMAKE_SOURCE_DIR})
 

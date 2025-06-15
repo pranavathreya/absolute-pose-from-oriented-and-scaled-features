@@ -2,5 +2,8 @@ include_directories(.)
 
 add_subdirectory(problem_generator)
 
+add_executable(test_p2pt_vs_p2ori test_p2pt_vs_p2ori.cpp)
 add_executable(test_random_problems test_random_problems.cpp)
+
+target_link_libraries(test_p2pt_vs_p2ori p2ori up1sift problem_generator OpenMVG::openMVG_multiview)
 target_link_libraries(test_random_problems p2ori up1sift problem_generator)
