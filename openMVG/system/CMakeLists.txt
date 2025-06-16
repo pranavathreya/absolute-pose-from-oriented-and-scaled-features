@@ -1,0 +1,1 @@
+add_library(openMVG_system INTERFACE logger.hpp)

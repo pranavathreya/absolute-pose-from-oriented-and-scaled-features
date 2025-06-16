@@ -1,0 +1,10 @@
+add_library(openMVG_multiview
+conditioning.hpp
+conditioning.cpp
+projection.hpp
+projection.cpp
+solver_resection_p2pt_fabbri.hpp
+solver_resection_p2pt_fabbri.cpp
+two_view_kernel.hpp
+solver_resection_metrics.hpp
+)

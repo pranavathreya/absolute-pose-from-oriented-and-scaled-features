@@ -17,14 +17,11 @@ include_directories( ${EIGEN3_INCLUDE_DIR} )
 
 find_package( PoseLib REQUIRED )
 
-# Change this to your OpenMVG installation path:
-set(ENV{OpenMVG_DIR} "$ENV{HOME}/ventura-research/openMVG_Build/openMVG_install")
-find_package( OpenMVG REQUIRED )
-
 include_directories(${CMAKE_SOURCE_DIR})
 
 add_subdirectory(p2ori)
 add_subdirectory(up1sift)
 add_subdirectory(affine2sift)
 add_subdirectory(examples)
+add_subdirectory(openMVG)
 

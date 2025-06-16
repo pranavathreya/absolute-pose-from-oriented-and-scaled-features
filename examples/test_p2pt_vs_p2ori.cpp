@@ -7,28 +7,27 @@
 #include <p2ori/p2ori.h>
 #include <up1sift/up1sift.h>
 #include <problem_generator/problem_generator.h>
-
-/* This include statement causes the segmentation fault in generator.make_random_problem*/
 #include <openMVG/multiview/solver_resection_p2pt_fabbri.hpp>
 
-//using namespace openMVG::euclidean_resection;
-//using namespace openMVG;
+using namespace openMVG::euclidean_resection;
+using namespace openMVG;
 using namespace problem_generator;
 
 int main( int argc, char **argv )
 {
+    std::cout << "Testing P2Pt vs P2ORI and UP1SIFT solvers\n";
     /* Code to instantiate Fabbri's solver */
-	// // Prepare your data as columns (Eigen matrices or compatible Mat type)
-    // Mat bearing_vectors(3, 2);   // 3x2 matrix
-    // Mat tangent_vectors(3, 2);   // 3x2 matrix
-    // Mat X(3, 2);                 // 3D points, 3x2 matrix
-    // Mat T(3, 2);                 // 3D tangents, 3x2 matrix
+	// Prepare your data as columns (Eigen matrices or compatible Mat type)
+    Mat bearing_vectors(3, 2);   // 3x2 matrix
+    Mat tangent_vectors(3, 2);   // 3x2 matrix
+    Mat X(3, 2);                 // 3D points, 3x2 matrix
+    Mat T(3, 2);                 // 3D tangents, 3x2 matrix
 
-    // // ... Fill in the matrices with your data ...
+    // ... Fill in the matrices with your data ...
 
-    // std::vector<Mat34> models;
-    // P2PtSolver_Fabbri solver;
-    // solver.Solve(bearing_vectors, tangent_vectors, X, T, &models);
+    std::vector<Mat34> models;
+    P2PtSolver_Fabbri solver;
+    solver.Solve(bearing_vectors, tangent_vectors, X, T, &models);
 
     srand(1234);
 
